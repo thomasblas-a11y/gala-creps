@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>QR code - Gala du CREPS</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="qr-page">
+      <section class="qr-card">
+        <p class="eyebrow">Diffusion invité</p>
+        <h1>QR code du formulaire</h1>
+        <p class="panel-date">Gala du 3 juin</p>
+        <img src="/qr.svg" alt="QR code vers le formulaire du gala du CREPS">
+        <p class="qr-url" id="qr-url"></p>
+      </section>
+    </main>
+    <script>
+      document.getElementById("qr-url").textContent = window.location.origin;
+    </script>
+  </body>
+</html>
