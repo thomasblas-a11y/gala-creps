@@ -15,28 +15,22 @@ form.addEventListener("submit", async (event) => {
   };
 
   try {
-    if (appsScriptUrl) {
-      await fetch(appsScriptUrl, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "text/plain;charset=utf-8" },
-        body: JSON.stringify(payload)
-      });
-      form.reset();
-      status.textContent = "Merci, votre présence au gala du CREPS est confirmée.";
-      return;
-    }
+    const formData = new URLSearchParams();
+    formData.append("nom", payload.nom);
+    formData.append("prenom", payload.prenom);
+    formData.append("statut", payload.statut);
+    formData.append("certification", payload.certification ? "true" : "false");
 
-    const response = await fetch("/api/inscription", {
+    await fetch(appsScriptUrl, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
+      mode: "no-cors",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: formData.toString()
     });
-    const result = await response.json();
-    if (!response.ok) throw new Error(result.message);
+
     form.reset();
     status.textContent = "Merci, votre présence au gala du CREPS est confirmée.";
   } catch (error) {
-    status.textContent = error.message || "Impossible d'enregistrer votre réponse.";
+    status.textContent = "Impossible d'enregistrer votre réponse.";
   }
 });
