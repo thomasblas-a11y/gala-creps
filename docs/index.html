@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gala du CREPS - Confirmation</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div class="hero__content">
+          <p class="eyebrow">Gala de fin d'année</p>
+          <h1>Gala du CREPS</h1>
+          <p class="event-date">3 juin</p>
+          <p class="intro">Merci de confirmer votre présence pour permettre à l'équipe événementielle d'organiser l'accueil des invités.</p>
+        </div>
+      </section>
+
+      <section class="form-shell" aria-label="Formulaire de confirmation">
+        <div class="panel">
+          <div class="panel__heading">
+            <p class="eyebrow">Confirmation invité</p>
+            <h2>Votre participation</h2>
+            <p class="panel-date">Gala du 3 juin</p>
+          </div>
+
+          <form id="gala-form">
+            <label>
+              <span>Nom</span>
+              <input name="nom" autocomplete="family-name" required>
+            </label>
+
+            <label>
+              <span>Prénom</span>
+              <input name="prenom" autocomplete="given-name" required>
+            </label>
+
+            <fieldset>
+              <legend>Statut</legend>
+              <div class="segmented">
+                <label>
+                  <input type="radio" name="statut" value="Interne" required>
+                  <span>Interne</span>
+                </label>
+                <label>
+                  <input type="radio" name="statut" value="Externe">
+                  <span>Externe</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <label class="check">
+              <input type="checkbox" name="certification" required>
+              <span>Je certifie venir au gala du CREPS.</span>
+            </label>
+
+            <button type="submit">Confirmer ma présence</button>
+            <p id="status" class="status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

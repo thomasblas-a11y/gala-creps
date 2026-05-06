@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Organisateur - Gala du CREPS</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="admin">
+      <header class="admin__header">
+        <div>
+          <p class="eyebrow">Espace organisateur</p>
+          <h1>Inscriptions au gala</h1>
+        </div>
+        <a class="download" id="download-link" href="responses.csv">Télécharger le CSV</a>
+      </header>
+
+      <section class="metrics" aria-label="Synthèse">
+        <div><span id="total">0</span><p>Total confirmés</p></div>
+        <div><span id="internes">0</span><p>Internes</p></div>
+        <div><span id="externes">0</span><p>Externes</p></div>
+      </section>
+
+      <section class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Nom</th>
+              <th>Prénom</th>
+              <th>Statut</th>
+              <th>Certification</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script src="config.js"></script>
+    <script src="admin.js"></script>
+  </body>
+</html>
